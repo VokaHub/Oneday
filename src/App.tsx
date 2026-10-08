@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
-import ObstacleStage from './components/ObstacleStage';
+import ContactSection from './components/ContactSection';
 import PricingComparison from './components/PricingComparison';
 import VerificationModal from './components/VerificationModal';
 import ApplyModal from './components/ApplyModal';
@@ -346,10 +346,8 @@ export default function App() {
         {/* SECTION: COMMUNITY & NETWORKING */}
         <CommunitySection onJoinWhatsApp={handleContactWhatsApp} />
 
-        {/* SECTION 10: CONTACT & OBSTACLE STAGE (SOLID SECTION) */}
-        <section id="contact" className="w-full bg-[#182641] text-white py-16 sm:py-24 relative overflow-hidden">
-          <ObstacleStage onContactClick={handleContactWhatsApp} />
-        </section>
+        {/* SECTION: SIMPLE CONTACT */}
+        <ContactSection onContactClick={handleContactWhatsApp} />
       </main>
 
       {/* QUIET EDITORIAL FOOTER */}
