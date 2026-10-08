@@ -48,13 +48,12 @@ export default function Navbar({}: NavbarProps) {
           {/* Zone 1: Wordmark */}
           <a
             href="#"
-            className={`text-xl sm:text-2xl font-extrabold tracking-tight transition-colors flex items-center gap-2 ${
+            className={`text-xl sm:text-2xl font-extrabold tracking-tight transition-colors flex items-center ${
               scrolled ? 'text-[#182641]' : 'text-white'
             }`}
             style={{ fontFamily: 'var(--font-display)' }}
           >
             <span className="tracking-tight">OneDay</span>
-            <span className="w-2.5 h-2.5 rounded-full bg-[#dcf816] inline-block shadow-sm"></span>
           </a>
 
           {/* Zone 2: Navigation Links (Desktop) */}

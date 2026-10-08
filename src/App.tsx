@@ -343,32 +343,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* DECISION (WHITE SECTION) */}
-        <section className="white-section decision">
-          <div className="section-inner text-center">
-            <p className="display reveal text-center">Elegir el emprendimiento es un gran paso.</p>
-            <p className="display reveal text-zinc-500 text-center">Crecer no debería costarte más.</p>
-          </div>
-        </section>
-
-        {/* FINDER */}
-        <section id="finder" className="finder color-section">
-          <div className="section-inner finder-inner text-left">
-            <p className="eyebrow reveal">¿BUSCÁS A UN EMPRENDEDOR VERIFICADO?</p>
-            <h2 className="display reveal">Encuéntralos a través de OneDay.</h2>
-            <div className="mt-6 sm:mt-8 flex justify-start">
-              <button
-                type="button"
-                onClick={handleVerifyWhatsApp}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#dcf816] text-[#182641] font-bold text-sm hover:bg-[#eafc45] transition-all shadow-lg shadow-black/25 hover:-translate-y-0.5 group"
-              >
-                <span>Habla con un asesor</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </button>
-            </div>
-          </div>
-        </section>
-
         {/* SECTION: COMMUNITY & NETWORKING */}
         <CommunitySection onJoinWhatsApp={handleContactWhatsApp} />
 
