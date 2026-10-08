@@ -1,0 +1,6 @@
+{
+  "name": "OneDay Guatemala",
+  "description": "Empowering entrepreneurs in Guatemala, this platform offers verified support, growth programs, and a network to build and scale businesses effectively.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
