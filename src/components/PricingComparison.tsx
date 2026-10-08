@@ -117,9 +117,14 @@ export default function PricingComparison({ onApplyWhatsApp }: PricingComparison
             }`}
           >
             <div>
-              {/* TOP ICON BOX */}
-              <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center text-white mb-6">
-                <ShieldCheck className="w-5 h-5 text-gray-200" />
+              {/* TOP ICON BOX & BADGE */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center text-white">
+                  <ShieldCheck className="w-5 h-5 text-gray-200" />
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#182641] text-[#dcf816]">
+                  Recomendado
+                </span>
               </div>
 
               {/* TITLE */}
@@ -152,7 +157,7 @@ export default function PricingComparison({ onApplyWhatsApp }: PricingComparison
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Check className="w-4 h-4 text-black shrink-0" />
-                  <span>Acceso a programa de publicidad sin inversión</span>
+                  <span>Publicidad en plataformas y campañas de OneDay sin inversión</span>
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Check className="w-4 h-4 text-black shrink-0" />

@@ -17,10 +17,10 @@ export default function ContactSection({ onContactClick }: ContactSectionProps) 
   };
 
   return (
-    <section id="contact" className="w-full bg-[#182641] text-white py-14 sm:py-16 px-4 sm:px-6">
-      <div className="max-w-xl mx-auto text-center flex flex-col items-center justify-center">
+    <section id="contact" className="w-full bg-[#182641] text-white py-10 sm:py-12 px-4 sm:px-8 border-t border-slate-800/80">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-6">
         <h2
-          className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-6"
+          className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight"
           style={{ fontFamily: 'var(--font-display, sans-serif)' }}
         >
           Contáctanos
