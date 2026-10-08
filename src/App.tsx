@@ -47,55 +47,41 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-[#182641] selection:bg-[#182641] selection:text-[#dcf816]">
       {/* Top Navigation Bar */}
-      <Navbar
-        onOpenApply={() => handleApplyWhatsApp()}
-        onOpenVerify={() => handleVerifyWhatsApp()}
-      />
+      <Navbar />
 
       <main>
         {/* SECTION 01: HERO */}
-        <section className="hero color-section">
-          <div className="section-inner hero-inner">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-xs border border-white/15 text-xs font-semibold text-white/90 mb-5 reveal is-visible">
-              <span className="w-2 h-2 rounded-full bg-[#dcf816] animate-pulse"></span>
-              <span>Guatemala · Agencia para Emprendedores Verificados</span>
-            </div>
-            <p className="eyebrow reveal is-visible">¿QUIERES HACER CRECER TU EMPRENDIMIENTO?</p>
-            <h1 className="display hero-title reveal is-visible">
+        <section 
+          className="hero relative overflow-hidden flex items-center min-h-[80vh] sm:min-h-[85vh] bg-[#182641]"
+          style={{
+            backgroundImage: `url('https://res.cloudinary.com/uelrhbi7/image/upload/v1791437707/Gemini_Generated_Image_88j6mn88j6mn88j6.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          {/* Subtle overlay so the photo is 100% visible and vivid while text pops */}
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#182641] via-transparent to-black/30" />
+
+          <div className="section-inner hero-inner relative z-10 w-full">
+            <p className="eyebrow reveal is-visible text-[#dcf816] font-bold drop-shadow">
+              ¿QUIERES HACER CRECER TU EMPRENDIMIENTO?
+            </p>
+            <h1 className="display hero-title reveal is-visible text-white drop-shadow-md">
               Deja de emprender solo.{' '}
-              <span>Sé parte de nuestra agencia para emprendedores verificados en Guatemala.</span>
+              <span className="drop-shadow-sm">Sé parte de nuestra agencia para emprendedores verificados en Guatemala.</span>
             </h1>
-            <div className="hero-actions reveal flex flex-wrap items-center gap-3 mt-2">
-              <a href="#trust" className="flex items-center gap-2 group">
+            <div className="hero-actions reveal">
+              <a href="#trust" className="flex items-center gap-2 group cursor-pointer shadow-lg hover:shadow-xl">
                 <span>Vuélvete verificado</span>
                 <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
               </a>
-              <a
-                href="#planes"
-                className="inline-flex items-center justify-center gap-1.5 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition-all backdrop-blur-xs"
-              >
-                <span>Ver membresía (Q250/mes)</span>
-                <ArrowUpRight className="w-4 h-4 opacity-75" />
-              </a>
-            </div>
-
-            {/* Micro Trust Proofs */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-xs sm:text-[13px] font-medium text-white/75 pt-6 border-t border-white/10">
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#dcf816] font-bold">✓</span> Cobros y reservas gestionados
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#dcf816] font-bold">✓</span> Publicidad activa sin inversión
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#dcf816] font-bold">✓</span> Insignia y código oficial de verificación
-              </span>
             </div>
           </div>
         </section>
 
         {/* SECTION 02: EDITORIAL INTRO - REPUTATION STATEMENT & GRAVITY TAGS */}
-        <section id="editorial" className="white-section editorial-intro border-b border-slate-100">
+        <section id="editorial" className="white-section editorial-intro">
           <div className="section-inner text-center">
             {/* THE CORE EDITORIAL STATEMENT - CENTERED */}
             <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
@@ -105,40 +91,35 @@ export default function App() {
               </p>
             </div>
 
-            {/* CONTEXT LABEL */}
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 select-none">
-              Las dudas que tus clientes tienen en silencio antes de comprar:
-            </p>
-
-            {/* GRAVITY TAGS */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-2xl mx-auto">
+            {/* GRAVITY TAGS PLACED BELOW THE TEXT */}
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-2xl mx-auto">
               <span
                 style={{ backgroundColor: '#00bf93' }}
-                className="px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 -rotate-2 select-none hover:scale-105 transition-transform"
+                className="px-3.5 sm:px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 -rotate-2 select-none hover:scale-105 transition-transform"
               >
                 Me van a estafar.
               </span>
               <span
                 style={{ backgroundColor: '#4c4dc3' }}
-                className="px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 rotate-2 select-none hover:scale-105 transition-transform"
+                className="px-3.5 sm:px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 rotate-2 select-none hover:scale-105 transition-transform"
               >
                 ¿Por qué tiene tan poquitos seguidores?
               </span>
               <span
                 style={{ backgroundColor: '#005057' }}
-                className="px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 -rotate-1 select-none hover:scale-105 transition-transform"
+                className="px-3.5 sm:px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 -rotate-1 select-none hover:scale-105 transition-transform"
               >
                 Su publicidad no se ve profesional.
               </span>
               <span
                 style={{ backgroundColor: '#182641' }}
-                className="px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 rotate-3 select-none hover:scale-105 transition-transform"
+                className="px-3.5 sm:px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 rotate-3 select-none hover:scale-105 transition-transform"
               >
                 ¿Aún no tienes un equipo?
               </span>
               <span
                 style={{ backgroundColor: '#00bf93' }}
-                className="px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 -rotate-2 select-none hover:scale-105 transition-transform"
+                className="px-3.5 sm:px-4 py-2 rounded-full shadow-sm text-xs sm:text-[13px] font-bold text-white border border-black/5 -rotate-2 select-none hover:scale-105 transition-transform"
               >
                 Tiene una buena idea, pero no tiene contactos.
               </span>
@@ -146,32 +127,28 @@ export default function App() {
           </div>
         </section>
 
-        {/* SECTION 03: ¿QUÉ SIGNIFICA ESTAR VERIFICADO POR ONEDAY? (UNIFIED TRUST SECTION) */}
-        <section id="trust" className="bg-[#f8fafc] border-b border-slate-200/80 py-16 sm:py-24">
-          <div className="section-inner max-w-6xl mx-auto">
-            {/* SECTION HEADER */}
-            <div className="max-w-3xl mb-10 sm:mb-14">
-              <p className="eyebrow text-slate-500 font-bold">¿QUÉ SIGNIFICA ESTAR VERIFICADO POR ONEDAY?</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#182641] tracking-tight leading-tight">
-                La confianza que tus clientes merecen.
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 mt-3 font-normal">
-                Convertimos la desconfianza inicial en una ventaja competitiva inmediata para tu negocio.
-              </p>
-            </div>
+        {/* TRUST INTRO (COLOR SECTION) - NOW ANSWERS THE REPUTATION NEED DIRECTLY */}
+        <section id="trust" className="trust-intro color-section">
+          <div className="section-inner">
+            <p className="eyebrow reveal">¿QUÉ SIGNIFICA ESTAR VERIFICADO POR ONEDAY?</p>
+            <h2 className="display reveal">La confianza que tus clientes merecen.</h2>
+          </div>
+        </section>
 
-            {/* TRUST CARDS (BALANCED 3 + 2 GRID) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6">
+        {/* TRUST POINTS (WHITE SECTION - UNBOXED EDITORIAL FORMAT) */}
+        <section className="white-section trust-cards">
+          <div className="section-inner">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 sm:gap-x-12 gap-y-8 sm:gap-y-12">
               {/* Trust 1: Pagos Seguros */}
-              <div className="lg:col-span-2 bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-xs hover:border-[#182641]/30 hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconPagosSeguros className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
-                    <IconPagosSeguros className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Pagos Seguros
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Tus pagos son gestionados a través de OneDay para crear una experiencia más segura y organizada para
                     ambas partes.
                   </p>
@@ -179,60 +156,60 @@ export default function App() {
               </div>
 
               {/* Trust 2: Emprendimiento Verificado */}
-              <div className="lg:col-span-2 bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-xs hover:border-[#182641]/30 hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-1 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconEmprendimientoVerificado className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
-                    <IconEmprendimientoVerificado className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Emprendimiento Verificado
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Cada emprendedor y proyecto pasa por un proceso de revisión antes de convertirse en OneDay Verified.
                   </p>
                 </div>
               </div>
 
               {/* Trust 3: Calidad Verificada */}
-              <div className="lg:col-span-2 bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-xs hover:border-[#182641]/30 hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-2 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconCalidadVerificada className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
-                    <IconCalidadVerificada className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Calidad Verificada
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Evaluamos cada proyecto según nuestros criterios de representación para mantener una red en la que se pueda confiar.
                   </p>
                 </div>
               </div>
 
               {/* Trust 4: Operaciones Gestionadas */}
-              <div className="lg:col-span-3 bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-xs hover:border-[#182641]/30 hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-0 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconOperacionesGestionadas className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
-                    <IconOperacionesGestionadas className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Operaciones Gestionadas
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Centralizamos cobros, reservas, agendas y atención al cliente a través de OneDay. El cliente tiene un respaldo formal y seguro, y tú te dedicas a tu negocio sin enredos.
                   </p>
                 </div>
               </div>
 
               {/* Trust 5: Todo en un Solo Lugar */}
-              <div className="lg:col-span-3 bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-xs hover:border-[#182641]/30 hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-1 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconTodoEnUnLugar className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
-                    <IconTodoEnUnLugar className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Todo en un Solo Lugar
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Tus clientes tienen un solo punto de contacto en el que pueden confiar, sin tener que escribirle a 10,000
                     páginas diferentes.
                   </p>
@@ -242,147 +219,133 @@ export default function App() {
           </div>
         </section>
 
-        {/* SECTION 04: LA AGENCIA PARA EMPRENDEDORES & 6 HERRAMIENTAS DE CRECIMIENTO */}
-        <section id="verified" className="white-section py-16 sm:py-24">
-          <div className="section-inner max-w-6xl mx-auto">
-            {/* SECTION HEADER */}
-            <div className="max-w-4xl mb-12 sm:mb-16">
-              <p className="eyebrow text-slate-500 font-bold">CRECE CON PERSONAS QUE SE PREOCUPAN POR TU CRECIMIENTO</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#182641] tracking-tight leading-tight mb-4">
-                One Day es la primera agencia para emprendedores verificados en Guatemala.
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+        {/* GROWTH INTRO (COLOR SECTION) - NOW LEADS INTO THE AGENCY INFRASTRUCTURE */}
+        <section id="growth" className="growth-intro color-section">
+          <div className="section-inner text-left">
+            <p className="eyebrow reveal">CRECE CON PERSONAS QUE SE PREOCUPAN POR TU CRECIMIENTO</p>
+            <h2 className="display reveal max-w-4xl">One Day es la primera agencia para emprendedores verificados en Guatemala.</h2>
+          </div>
+        </section>
+
+        {/* GET ONEDAY VERIFIED / FEATURES (UNBOXED EDITORIAL FORMAT) */}
+        <section id="verified" className="white-section features">
+          <div className="section-inner">
+            <div className="section-heading reveal mb-6 sm:mb-8">
+              <p className="eyebrow">OBTÉN LA VERIFICACIÓN ONEDAY</p>
+              <p>
                 Obtener la verificación One Day te posiciona como emprendedor de confianza frente a nuestra comunidad de clientes potenciales y te da acceso a las herramientas que necesitas para hacer crecer tu negocio y mantener tu independencia.
               </p>
             </div>
 
-            {/* 6 VALUE PILLARS (BALANCED 3x2 GRID) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+            {/* GOOGLE WORKSPACE STYLE COMPARISON CARDS (Q250/mes vs Hacerlo por tu cuenta) */}
+            <PricingComparison onApplyWhatsApp={handleApplyWhatsApp} />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 sm:gap-x-12 gap-y-8 sm:gap-y-12 mt-12 sm:mt-16">
               {/* Card 1: Verificación OneDay */}
-              <div className="bg-[#f8fafc] rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-2xs hover:border-[#182641]/30 hover:bg-white hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-0 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconVerificacionOneDay className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-2xs">
-                    <IconVerificacionOneDay className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Verificación OneDay
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Es un sello que va a mostrar que tu negocio ha sido revisado por OneDay y cumple con nuestros estándares de confianza y representación.
                   </p>
                 </div>
               </div>
 
               {/* Card 2: Programas de Crecimiento */}
-              <div className="bg-[#f8fafc] rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-2xs hover:border-[#182641]/30 hover:bg-white hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-1 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconProgramasCrecimiento className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-2xs">
-                    <IconProgramasCrecimiento className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Programas de Crecimiento
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Publicidad activa de tu negocio en todas las plataformas de OneDay y campañas comerciales grupales para generarte ventas sin inversión.
                   </p>
                 </div>
               </div>
 
               {/* Card 3: Red OneDay */}
-              <div className="bg-[#f8fafc] rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-2xs hover:border-[#182641]/30 hover:bg-white hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-2 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconRedOneDay className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-2xs">
-                    <IconRedOneDay className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Red OneDay
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Sé parte de una comunidad de profesionales, creadores, espacios y marcas verificadas.
                   </p>
                 </div>
               </div>
 
               {/* Card 4: Gestión de Negocio */}
-              <div className="bg-[#f8fafc] rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-2xs hover:border-[#182641]/30 hover:bg-white hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-0 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconGestionNegocio className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-2xs">
-                    <IconGestionNegocio className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Gestión de Negocio
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Delega los cobros, reservas, agendas y comunicación con clientes a One Day para que tú solo te dediques a lo que mejor sabes hacer: emprender.
                   </p>
                 </div>
               </div>
 
               {/* Card 5: Oportunidades Comerciales */}
-              <div className="bg-[#f8fafc] rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-2xs hover:border-[#182641]/30 hover:bg-white hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-1 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconOportunidadesComerciales className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-2xs">
-                    <IconOportunidadesComerciales className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Oportunidades Comerciales
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
                     Buscamos activamente oportunidades comerciales, alianzas y colaboraciones que puedan ayudar a impulsar tu negocio.
                   </p>
                 </div>
               </div>
 
               {/* Card 6: Asesoría Experta */}
-              <div className="bg-[#f8fafc] rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-2xs hover:border-[#182641]/30 hover:bg-white hover:shadow-md transition-all flex flex-col justify-between group">
+              <div className="flex flex-col items-start reveal delay-2 group">
+                <div className="mb-3.5 sm:mb-4 flex items-center justify-start">
+                  <IconAsesoriaExperta className="w-11 h-11 sm:w-12 sm:h-12 transition-transform group-hover:scale-105" />
+                </div>
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-2xs">
-                    <IconAsesoriaExperta className="w-7 h-7" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#182641] tracking-tight leading-snug mb-2">
                     Asesoría Experta
                   </h3>
-                  <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed">
-                    Un equipo que te asesora durante todo el proceso y te ayuda a tomar mejores decisiones para avanzar con tu negocio.
+                  <p className="text-[15px] sm:text-base text-slate-600 font-normal leading-relaxed">
+                    Un equipo que te asesora durante todo el proceso y te ayuda a tomar mejores decisiones para avanzar con tu
+                    negocio.
                   </p>
                 </div>
               </div>
             </div>
-
-            {/* SECTION 05: PRICING COMPARISON - NATURAL HIGH-CONVERSION POSITIONING */}
-            <div id="planes" className="mt-16 sm:mt-24 pt-12 sm:pt-16 border-t border-slate-200/80">
-              <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#182641]/5 text-[#182641] uppercase tracking-wider mb-3">
-                  Transparencia de inversión
-                </span>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#182641] tracking-tight">
-                  Todo incluido por solo Q250/mes
-                </h3>
-                <p className="text-sm sm:text-base text-slate-600 mt-2 font-normal">
-                  Compara lo que gastarías contratando cada servicio de forma individual frente a tener la membresía completa de OneDay.
-                </p>
-              </div>
-
-              <PricingComparison onApplyWhatsApp={handleApplyWhatsApp} />
-            </div>
           </div>
         </section>
 
-        {/* SECTION 06: FUTURE / LA CARRERA DEL FUTURO */}
-        <section id="futuro" className="future color-section py-16 sm:py-24">
-          <div className="section-inner max-w-5xl mx-auto">
+        {/* FUTURE (COLOR SECTION) */}
+        <section id="futuro" className="future color-section">
+          <div className="section-inner">
             <p className="eyebrow reveal">LA CARRERA DEL FUTURO</p>
-            <h2 className="display reveal text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-8">
+            <h2 className="display reveal">
               En Guatemala, 1 de cada 4 adultos está iniciando o dirigiendo un negocio nuevo.
             </h2>
-            <div className="future-copy reveal border-l-2 border-[#dcf816] pl-5 sm:pl-7 space-y-4 max-w-3xl">
-              <p className="text-base sm:text-xl text-white/95 font-medium leading-relaxed">
-                Creemos en el emprendimiento y en todo lo que puede crear.
-              </p>
-              <p className="text-base sm:text-xl text-white/95 font-medium leading-relaxed">
-                OneDay está construido para quienes eligen el emprendimiento como carrera.
-              </p>
-              <p className="text-base sm:text-xl text-white/95 font-medium leading-relaxed">
+            <div className="future-copy reveal">
+              <p>Creemos en el emprendimiento y en todo lo que puede crear.</p>
+              <p>OneDay está construido para quienes eligen el emprendimiento como carrera.</p>
+              <p>
                 Creemos que quienes eligen este camino merecen la infraestructura, el apoyo y las oportunidades necesarias
                 para construirlo y hacerlo crecer.
               </p>
@@ -390,10 +353,10 @@ export default function App() {
           </div>
         </section>
 
-        {/* SECTION 07: COMMUNITY & NETWORKING */}
+        {/* SECTION: COMMUNITY & NETWORKING */}
         <CommunitySection onJoinWhatsApp={handleContactWhatsApp} />
 
-        {/* SECTION 08: SIMPLE CONTACT */}
+        {/* SECTION: SIMPLE CONTACT */}
         <ContactSection onContactClick={handleContactWhatsApp} />
       </main>
 
@@ -414,19 +377,13 @@ export default function App() {
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-zinc-500 font-semibold">
             <button
               onClick={() => setIsTermsOpen(true)}
-              className="hover:text-[#182641] transition-colors py-1"
+              className="hover:text-[#182641] transition-colors py-1 cursor-pointer"
             >
               Términos y Condiciones
             </button>
             <button
-              onClick={handleVerifyWhatsApp}
-              className="hover:text-[#182641] transition-colors py-1"
-            >
-              Verificar Código
-            </button>
-            <button
               onClick={handleContactWhatsApp}
-              className="hover:text-[#182641] transition-colors py-1"
+              className="hover:text-[#182641] transition-colors py-1 cursor-pointer"
             >
               Contáctanos
             </button>

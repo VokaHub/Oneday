@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
   onOpenApply?: () => void;
@@ -11,16 +11,6 @@ export default function Navbar({}: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const WHATSAPP_NUMBER = '50236723524';
-
-  const handleApplyWhatsApp = () => {
-    const text = encodeURIComponent('Hola OneDay, quiero aplicar.');
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
-  };
-
-  const handleVerifyWhatsApp = () => {
-    const text = encodeURIComponent('Hola OneDay, deseo verificar el código de un emprendedor.');
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
-  };
 
   const handleContactWhatsApp = () => {
     const text = encodeURIComponent('Hola OneDay, quisiera ponerme en contacto.');
@@ -82,59 +72,28 @@ export default function Navbar({}: NavbarProps) {
             >
               ¿Qué significa estar verificado por OneDay?
             </a>
-            <button
-              onClick={handleContactWhatsApp}
-              className={`transition-colors hover:opacity-100 whitespace-nowrap text-left ${
-                scrolled ? 'text-[#182641]/75 hover:text-[#182641]' : 'text-white/85 hover:text-white'
-              }`}
-            >
-              Contacto
-            </button>
           </nav>
 
-          {/* Zone 3: Primary Actions (Desktop/Tablet) */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Zone 3: Primary Action (Desktop) */}
+          <div className="hidden lg:flex items-center">
             <button
-              onClick={handleVerifyWhatsApp}
-              className={`px-4 py-2 text-xs font-bold rounded-full border transition-all flex items-center gap-1.5 ${
-                scrolled
-                  ? 'border-zinc-300 text-[#182641] hover:bg-zinc-100'
-                  : 'border-white/30 text-white hover:bg-white/10'
-              }`}
-            >
-              <Search className="w-3.5 h-3.5 text-[#dcf816]" />
-              <span>Verificar Código</span>
-            </button>
-
-            <button
-              onClick={handleApplyWhatsApp}
-              className={`px-5 py-2 text-xs font-bold rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-1 hover:scale-105 ${
+              onClick={handleContactWhatsApp}
+              className={`px-5 py-2 text-xs font-bold rounded-full transition-all shadow-sm hover:shadow-md flex items-center gap-1.5 cursor-pointer ${
                 scrolled
                   ? 'bg-[#182641] text-[#dcf816] hover:bg-[#223559]'
                   : 'bg-[#dcf816] text-[#182641] hover:bg-[#eafc45]'
               }`}
             >
-              <span>Aplicar</span>
+              <span>Contacto</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
           {/* Mobile menu trigger button */}
-          <div className="flex sm:hidden items-center gap-2">
-            <button
-              onClick={handleApplyWhatsApp}
-              className={`px-3.5 py-1.5 text-xs font-bold rounded-full transition-all flex items-center gap-1 ${
-                scrolled
-                  ? 'bg-[#182641] text-[#dcf816]'
-                  : 'bg-[#dcf816] text-[#182641]'
-              }`}
-            >
-              <span>Aplicar</span>
-            </button>
-
+          <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-xl transition-colors ${
+              className={`p-2 rounded-xl transition-colors cursor-pointer ${
                 scrolled ? 'text-[#182641]' : 'text-white'
               }`}
               aria-label="Abrir menú"
@@ -169,36 +128,18 @@ export default function Navbar({}: NavbarProps) {
               >
                 ¿Qué significa estar verificado por OneDay?
               </a>
+            </div>
+
+            <div className="pt-4 border-t border-zinc-100">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   handleContactWhatsApp();
                 }}
-                className="py-2 text-left hover:text-[#182641] transition-colors"
+                className="w-full py-3 px-4 text-xs font-bold rounded-full bg-[#dcf816] text-[#182641] flex items-center justify-center gap-2 hover:bg-[#eafc45] cursor-pointer"
               >
-                Contacto
-              </button>
-            </div>
-
-            <div className="pt-4 border-t border-zinc-100 flex flex-col gap-2.5">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleVerifyWhatsApp();
-                }}
-                className="w-full py-3 px-4 text-xs font-bold rounded-full border border-zinc-300 text-[#182641] flex items-center justify-center gap-2 hover:bg-zinc-50"
-              >
-                <Search className="w-4 h-4 text-[#182641]" />
-                Verificar Código
-              </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleApplyWhatsApp();
-                }}
-                className="w-full py-3 px-4 text-xs font-bold rounded-full bg-[#dcf816] text-[#182641] flex items-center justify-center gap-2 hover:bg-[#eafc45]"
-              >
-                Aplicar ahora
+                <span>Contacto</span>
+                <ArrowUpRight className="w-4 h-4 text-[#182641]" />
               </button>
             </div>
           </div>
